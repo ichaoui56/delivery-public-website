@@ -76,12 +76,12 @@
 }
 
 @theme inline {
-  /* Updated font families to match React code */
-  --font-sans: "Tahoma", "Arial", sans-serif;
-  --font-heading: "Rajdhani", sans-serif;
-  --font-jost: "Jost", sans-serif;
+  /* Updated font families to use CSS variables from Next.js fonts */
+  --font-sans: var(--font-cairo), "Tahoma", "Arial", sans-serif;
+  --font-heading: var(--font-heading), "Rajdhani", sans-serif;
+  --font-jost: var(--font-jost), "Jost", sans-serif;
   /* Added Cairo font for Arabic typography */
-  --font-cairo: "Cairo", sans-serif;
+  --font-cairo: var(--font-cairo), "Cairo", sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -132,7 +132,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
   }
   h1,
   h2,
@@ -141,6 +141,19 @@
   h5,
   h6 {
     @apply font-heading font-bold;
+  }
+  
+  /* Font utility classes */
+  .font-cairo {
+    font-family: var(--font-cairo), "Cairo", sans-serif;
+  }
+  
+  .font-heading {
+    font-family: var(--font-heading), "Rajdhani", sans-serif;
+  }
+  
+  .font-jost {
+    font-family: var(--font-jost), "Jost", sans-serif;
   }
 }
 

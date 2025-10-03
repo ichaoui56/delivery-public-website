@@ -1,12 +1,14 @@
 {
-  "name": "my-v0-project",
+  "name": "sonic-delivery-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "ily": "rm -rf .next && next build && next start"
+
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

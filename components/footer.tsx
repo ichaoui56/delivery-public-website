@@ -41,10 +41,12 @@ export default function Footer({
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center">
-                <div className="text-primary text-2xl font-bold">S</div>
+              <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-white shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" />
               </div>
-              <span className="text-2xl font-heading font-bold">Sonic Delivery</span>
+              <span className="text-white text-lg sm:text-2xl font-heading font-bold group-hover:text-white/90 transition-colors">
+                Sonic Delivery
+              </span>
             </div>
             <p className="text-white/70 leading-relaxed">{t.companyInfo}</p>
           </div>

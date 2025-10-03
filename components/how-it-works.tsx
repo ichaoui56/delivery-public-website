@@ -15,7 +15,7 @@ export default function HowItWorks(
     locale: string
   }
 ) {
-  const t = translations.coverage as Record<string, string>
+  const t = translations.howItWorks as Record<string, string>
 
   const steps = [
     {
