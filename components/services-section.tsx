@@ -1,0 +1,106 @@
+"use client"
+
+import { Truck, Warehouse, Package, RotateCcw, CheckCircle } from "lucide-react"
+import { useTranslations } from "@/hooks/use-translations"
+
+export default function ServicesSection() {
+  const t = useTranslations()
+
+  const services = [
+    {
+      icon: Truck,
+      title: t("services.service1Title"),
+      description: t("services.service1Desc"),
+    },
+    {
+      icon: Warehouse,
+      title: t("services.service2Title"),
+      description: t("services.service2Desc"),
+    },
+    {
+      icon: Package,
+      title: t("services.service3Title"),
+      description: t("services.service3Desc"),
+    },
+    {
+      icon: RotateCcw,
+      title: t("services.service4Title"),
+      description: t("services.service4Desc"),
+    },
+  ]
+
+  const priorities = [
+    t("services.priority1"),
+    t("services.priority2"),
+    t("services.priority3"),
+    t("services.priority4"),
+    t("services.priority5"),
+    t("services.priority6"),
+  ]
+
+  return (
+    <section id="services" className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground">
+            {t("services.title")} <span className="text-primary">{t("services.titleHighlight")}</span>{" "}
+            {t("services.titleEnd")}
+          </h2>
+          <div className="w-24 h-1 bg-primary mx-auto" />
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">{t("services.subtitle")}</p>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-2xl hover:border-primary/50 transition-all duration-500 hover:-translate-y-3 hover:scale-105 group relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                  <service.icon className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-heading font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Priorities Section */}
+        <div className="bg-muted rounded-3xl overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            {/* Image */}
+            <div className="relative h-[500px] lg:h-[600px] order-2 lg:order-1 rtl:lg:order-2">
+              <img
+                src="/delivery-person-holding-stacked-boxes-with-sonic-d.jpg"
+                alt="Sonic Delivery Service"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="p-8 lg:p-12 space-y-6 order-1 lg:order-2 rtl:lg:order-1">
+              <h3 className="text-3xl font-heading font-bold text-foreground mb-8">{t("services.prioritiesTitle")}</h3>
+
+              <div className="space-y-4">
+                {priorities.map((priority, index) => (
+                  <div key={index} className="flex items-start gap-3 rtl:flex-row-reverse">
+                    <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-lg text-foreground">{priority}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
