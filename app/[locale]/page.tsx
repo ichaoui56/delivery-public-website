@@ -11,7 +11,7 @@ import { NewsletterSection } from "@/components/newsletter-section"
 import Footer from "@/components/footer"
 import { getTranslations } from "@/lib/translations"
 
-export default async function Home({ params }: { params: Promise<{ locale: "en" | "ar" }> }) {
+export default async function Home({ params }: { params: Promise<{ locale: "fr" | "ar" }> }) {
   const { locale } = await params
   const translations = getTranslations(locale)
 

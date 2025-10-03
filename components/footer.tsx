@@ -9,7 +9,7 @@ export default function Footer({
   locale,
 }: {
   translations: TranslationType
-  locale: "en" | "ar"
+  locale: "fr" | "ar"
 }) {
   const t = translations.footer as Record<string, string>
 
@@ -69,15 +69,15 @@ export default function Footer({
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                <span className="text-white/70">{translations.contact?.address || "66 Broklyant, India"}</span>
+                <span className="text-white/70">{t.locationValue || "66 Broklyant, India"}</span>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                <span className="text-white/70">{translations.contact?.phone || "012 345 678 9101"}</span>
+                <span className="text-white/70">{t.phoneValue || "012 345 678 9101"}</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                <span className="text-white/70">{translations.contact?.emailAddress || "abcd@gmail.com"}</span>
+                <span className="text-white/70">{t.emailValue || "abcd@gmail.com"}</span>
               </li>
             </ul>
           </div>

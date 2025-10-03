@@ -11,7 +11,7 @@ export default function Navbar({
   locale,
 }: {
   translations: TranslationType
-  locale: "en" | "ar"
+  locale: string
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const t = translations.nav as Record<string, string>

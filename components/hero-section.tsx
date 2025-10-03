@@ -4,13 +4,14 @@ import { Play, Facebook, Linkedin, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 import type { TranslationType } from "@/lib/translations"
+import ScrollAnimation from "@/components/scroll-animation"
 
 export default function HeroSection({
   translations,
   locale,
 }: {
   translations: TranslationType
-  locale: "en" | "ar"
+  locale: string
 }) {
   const [isSticky, setIsSticky] = useState(false)
   const t = translations.hero as Record<string, string>
@@ -88,29 +89,32 @@ export default function HeroSection({
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-8rem)]">
-          <div className="space-y-8 animate-fade-in-up">
-            <h1
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight text-balance"
-              style={{ fontFamily: "Tahoma, Arial, sans-serif" }}
-            >
-              {t.title}
-            </h1>
+          <ScrollAnimation delay={0.2} duration={0.8}>
+            <div className="space-y-8">
+              <h1
+                className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight text-balance"
+                style={{ fontFamily: "Tahoma, Arial, sans-serif" }}
+              >
+                {t.title}
+              </h1>
 
-            <p className="text-lg md:text-xl text-gray-800 leading-relaxed max-w-xl">{t.subtitle}</p>
+              <p className="text-lg md:text-xl text-gray-800 leading-relaxed max-w-xl">{t.subtitle}</p>
 
-            <Button
-              variant="ghost"
-              className="text-gray-900 hover:text-gray-900 hover:bg-white/10 font-bold text-base tracking-wider flex items-center gap-2 group"
-              style={{ fontFamily: "Rajdhani, sans-serif" }}
-            >
-              <div className="w-11 h-11 rounded-full bg-white/80 flex items-center justify-center group-hover:bg-white transition-colors">
-                <Play className="w-5 h-5 fill-gray-900" />
-              </div>
-              {t.watchVideo}
-            </Button>
-          </div>
+              <Button
+                variant="ghost"
+                className="text-gray-900 hover:text-gray-900 hover:bg-white/10 font-bold text-base tracking-wider flex items-center gap-2 group"
+                style={{ fontFamily: "Rajdhani, sans-serif" }}
+              >
+                <div className="w-11 h-11 rounded-full bg-white/80 flex items-center justify-center group-hover:bg-white transition-colors">
+                  <Play className="w-5 h-5 fill-gray-900" />
+                </div>
+                {t.watchVideo}
+              </Button>
+            </div>
+          </ScrollAnimation>
 
-          <div className="relative animate-fade-in">
+          <ScrollAnimation delay={0.4} duration={0.8}>
+            <div className="relative">
             {/* Star shape behind */}
             <div className="absolute top-1/2 right-0 -translate-y-1/2 w-64 h-64 z-0">
               <img src="/images/design-mode/hero-shape1.png.png" alt="" className="w-full h-full object-contain" />
@@ -136,10 +140,12 @@ export default function HeroSection({
                 className="w-full max-w-md object-contain"
               />
             </div>
-          </div>
+            </div>
+          </ScrollAnimation>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 mt-12 bg-[#3b8bc9] rounded-t-3xl">
+        <ScrollAnimation delay={0.6} duration={0.8}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 mt-12 bg-[#3b8bc9] rounded-t-3xl">
           <div className="flex items-center justify-center gap-3">
             <div className="w-14 h-14 bg-[#5ba8d8] rounded-xl flex items-center justify-center">
               <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -224,6 +230,7 @@ export default function HeroSection({
             </div>
           </div>
         </div>
+        </ScrollAnimation>
       </div>
     </section>
   )
