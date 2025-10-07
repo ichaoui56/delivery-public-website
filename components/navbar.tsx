@@ -1,10 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Phone, Mail, Clock, Search, Facebook, Instagram, Twitter, ChevronRight, X } from "lucide-react"
+import { Phone, Mail, Clock, Search, Facebook, Instagram, Twitter, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import type { TranslationType } from "@/lib/translations"
+import { LanguageSelector } from "./ui/language-selector"
 
 export default function Navbar({
   translations,
@@ -44,6 +45,15 @@ export default function Navbar({
     { name: t.contact, href: "#contact" },
   ]
 
+  // Get the opposite language for display
+  const getOppositeLanguage = () => {
+    return locale === "fr" ? "العربية" : "Français"
+  }
+
+  const getOppositeLocale = () => {
+    return locale === "fr" ? "ar" : "fr"
+  }
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="hidden md:block bg-gradient-to-r from-[#0246a5] via-[#0358c7] to-[#0a74da] text-white overflow-hidden">
@@ -65,14 +75,17 @@ export default function Navbar({
               </div>
             </div>
 
-            {/* Language + Social Icons */}
             <div className="flex items-center gap-3 sm:gap-4">
-              <Link
-                href={locale === "en" ? "/ar" : "/en"}
-                className="text-xs sm:text-sm font-bold hover:scale-105 transition-transform duration-200 px-2 py-1 rounded-md hover:bg-white/10"
-              >
-                {locale === "en" ? "العربية" : "English"}
-              </Link>
+              {/* Language Switcher in Top Banner */}
+              <div className="flex items-center gap-2">
+                <Link
+                  href={`/${getOppositeLocale()}`}
+                  className="flex items-center gap-2 px-3 py-1.5 bg-white/20 hover:bg-white/30 rounded-full transition-all duration-200 hover:scale-105 text-white font-medium text-sm"
+                >
+                  <span>{getOppositeLanguage()}</span>
+                </Link>
+              </div>
+
               <div className="flex items-center gap-2 sm:gap-3">
                 <Link
                   href="#"
@@ -130,6 +143,8 @@ export default function Navbar({
             </div>
 
             <div className="flex items-center gap-2 sm:gap-4">
+
+
               <button className="text-white hover:bg-white/10 p-2 rounded-full transition-all duration-200 hover:scale-110 hidden sm:block">
                 <Search className="w-5 h-5" />
               </button>
@@ -186,6 +201,23 @@ export default function Navbar({
             <div>
               <h2 className="text-white text-2xl font-heading font-bold mb-2">Menu</h2>
               <p className="text-white/70 text-sm">Navigate to your destination</p>
+            </div>
+          </div>
+
+          {/* Mobile Language Switcher */}
+          <div className="mb-6 p-4 bg-white/10 rounded-xl backdrop-blur-sm">
+            <p className="text-white/70 text-xs font-medium mb-3 uppercase tracking-wider">
+              {locale === "fr" ? "Langue" : "اللغة"}
+            </p>
+            <div className="flex flex-col gap-2">
+              <Link
+                href={`/${getOppositeLocale()}`}
+                className="flex items-center justify-between w-full p-3 bg-white/20 hover:bg-white/30 rounded-lg transition-all duration-200 text-white font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span>{getOppositeLanguage()}</span>
+                <ChevronRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
 

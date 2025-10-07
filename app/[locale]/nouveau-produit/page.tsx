@@ -123,6 +123,7 @@ export default function NouveauProduitPage() {
                 onChange={(e) => setClientInfo({ ...clientInfo, email: e.target.value })}
               />
             </div>
+            
 
             <div className="space-y-2">
               <Label htmlFor="phone">{t("productPage.phone")}</Label>
@@ -147,6 +148,17 @@ export default function NouveauProduitPage() {
               />
             </div>
 
+            <div className="space-y-2 md:col-span-2">
+              <Label htmlFor="address">{t("productPage.address")}</Label>
+              <Textarea
+                id="address"
+                placeholder={t("productPage.addressPlaceholder")}
+                rows={3}
+                className="resize-none"
+                value={clientInfo.address}
+                onChange={(e) => setClientInfo({ ...clientInfo, address: e.target.value })}
+              />
+            </div>
             <div className="space-y-2 md:col-span-2">
               <Label htmlFor="address">{t("productPage.address")}</Label>
               <Textarea

@@ -19,14 +19,14 @@ export default async function Home({ params }: { params: Promise<{ locale: "fr" 
     <main className="min-h-screen">
       <Navbar translations={translations} locale={locale} />
       <HeroSection translations={translations} locale={locale} />
-      <WhyChooseUs translations={translations} locale={locale} />
       <ServicesSection translations={translations} locale={locale} />
+      <WhyChooseUs translations={translations} locale={locale} />
       <CoverageSection translations={translations} locale={locale} />
-      <HowItWorks translations={translations} locale={locale} />
       <PricingSection translations={translations} locale={locale} />
+      <HowItWorks translations={translations} locale={locale} />
+      <NewsletterSection translations={translations} locale={locale} />
       <FaqSection translations={translations} locale={locale} />
       <ContactSection translations={translations} locale={locale} />
-      <NewsletterSection translations={translations} locale={locale} />
       <Footer translations={translations} locale={locale} />
     </main>
   )
