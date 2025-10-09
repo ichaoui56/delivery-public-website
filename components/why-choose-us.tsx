@@ -83,7 +83,10 @@ export default function WhyChooseUs({
               {t.title} <span className="text-primary-light">{t.titleHighlight}</span> ?
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto" />
-            <p className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">{t.subtitle}</p>
+            <p
+              className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: t.subtitle }}
+            />
           </div>
         </ScrollAnimation>
 

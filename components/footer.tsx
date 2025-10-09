@@ -100,7 +100,8 @@ export default function Footer({
               </div>
               <div className="flex gap-3 pt-4">
                 <Link
-                  href="#"
+                  target="_blank"
+                  href="https://www.facebook.com/share/16CE5Hq8vh/"
                   className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
                 >
                   <Facebook className="w-5 h-5" />

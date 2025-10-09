@@ -5,7 +5,6 @@ import { Phone, Mail, Clock, Search, Facebook, Instagram, Twitter, ChevronRight 
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import type { TranslationType } from "@/lib/translations"
-import { LanguageSelector } from "./ui/language-selector"
 
 export default function Navbar({
   translations,
@@ -43,6 +42,7 @@ export default function Navbar({
     { name: t.whyUs, href: "#why-us" },
     { name: t.pricing, href: "#pricing" },
     { name: t.contact, href: "#contact" },
+    { name: t.espaceClient, href: `/${locale}/espace-client` },
   ]
 
   // Get the opposite language for display
@@ -88,7 +88,8 @@ export default function Navbar({
 
               <div className="flex items-center gap-2 sm:gap-3">
                 <Link
-                  href="#"
+                  href="https://www.facebook.com/share/16CE5Hq8vh/"
+                  target="_blank"
                   className="hover:scale-110 transition-transform duration-200 hover:bg-white/10 p-1.5 rounded-full"
                 >
                   <Facebook className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -112,9 +113,8 @@ export default function Navbar({
       </div>
 
       <nav
-        className={`transition-all duration-300 ${
-          scrolled ? "bg-[#023e88]/95 backdrop-blur-lg shadow-2xl" : "bg-[#023e88] shadow-lg"
-        }`}
+        className={`transition-all duration-300 ${scrolled ? "bg-[#023e88]/95 backdrop-blur-lg shadow-2xl" : "bg-[#023e88] shadow-lg"
+          }`}
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 sm:h-20">
@@ -143,16 +143,16 @@ export default function Navbar({
             </div>
 
             <div className="flex items-center gap-2 sm:gap-4">
-
-
               <button className="text-white hover:bg-white/10 p-2 rounded-full transition-all duration-200 hover:scale-110 hidden sm:block">
                 <Search className="w-5 h-5" />
               </button>
 
-              <Button className="bg-white text-[#023e88] hover:bg-white/90 hover:scale-105 rounded-full px-4 sm:px-6 py-2 sm:py-2.5 font-heading font-bold tracking-wide hidden md:flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base">
-                {t.becomeClient}
-                <ChevronRight className="w-4 h-4" />
-              </Button>
+              <Link href={`${locale}/auth/sign-in`}>
+                <Button className="bg-white text-[#023e88] hover:bg-white/90 hover:scale-105 rounded-full px-4 sm:px-6 py-2 sm:py-2.5 font-heading font-bold tracking-wide hidden md:flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base">
+                  {t.becomeClient}
+                  <ChevronRight className="w-4 h-4" />
+                </Button>
+              </Link>
 
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -162,19 +162,16 @@ export default function Navbar({
                 <div className="w-6 h-6 flex items-center justify-center">
                   <div className="relative w-5 h-4">
                     <span
-                      className={`absolute left-0 w-full h-0.5 bg-white rounded-full transition-all duration-300 ease-in-out ${
-                        mobileMenuOpen ? "top-1/2 rotate-45 -translate-y-1/2" : "top-0 rotate-0"
-                      }`}
+                      className={`absolute left-0 w-full h-0.5 bg-white rounded-full transition-all duration-300 ease-in-out ${mobileMenuOpen ? "top-1/2 rotate-45 -translate-y-1/2" : "top-0 rotate-0"
+                        }`}
                     />
                     <span
-                      className={`absolute left-0 top-1/2 -translate-y-1/2 w-full h-0.5 bg-white rounded-full transition-all duration-300 ease-in-out ${
-                        mobileMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
-                      }`}
+                      className={`absolute left-0 top-1/2 -translate-y-1/2 w-full h-0.5 bg-white rounded-full transition-all duration-300 ease-in-out ${mobileMenuOpen ? "opacity-0 scale-0" : "opacity-100 scale-100"
+                        }`}
                     />
                     <span
-                      className={`absolute left-0 w-full h-0.5 bg-white rounded-full transition-all duration-300 ease-in-out ${
-                        mobileMenuOpen ? "top-1/2 -rotate-45 -translate-y-1/2" : "bottom-0 rotate-0"
-                      }`}
+                      className={`absolute left-0 w-full h-0.5 bg-white rounded-full transition-all duration-300 ease-in-out ${mobileMenuOpen ? "top-1/2 -rotate-45 -translate-y-1/2" : "bottom-0 rotate-0"
+                        }`}
                     />
                   </div>
                 </div>
@@ -185,16 +182,14 @@ export default function Navbar({
       </nav>
 
       <div
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
-          mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
         onClick={() => setMobileMenuOpen(false)}
       />
 
       <div
-        className={`fixed top-0 ${locale === "ar" ? "left-0" : "right-0"} h-full w-[85%] max-w-sm bg-gradient-to-br from-[#023e88] via-[#0246a5] to-[#0358c7] shadow-2xl transform transition-transform duration-300 ease-out lg:hidden overflow-y-auto ${
-          mobileMenuOpen ? "translate-x-0" : locale === "ar" ? "-translate-x-full" : "translate-x-full"
-        }`}
+        className={`fixed top-0 ${locale === "ar" ? "left-0" : "right-0"} h-full w-[85%] max-w-sm bg-gradient-to-br from-[#023e88] via-[#0246a5] to-[#0358c7] shadow-2xl transform transition-transform duration-300 ease-out lg:hidden overflow-y-auto ${mobileMenuOpen ? "translate-x-0" : locale === "ar" ? "-translate-x-full" : "translate-x-full"
+          }`}
       >
         <div className="p-6 pt-6">
           <div className="flex items-center justify-between mb-8 pb-6 border-b border-white/20">
@@ -238,10 +233,12 @@ export default function Navbar({
           </nav>
 
           {/* Mobile CTA Button */}
-          <Button className="w-full bg-white text-[#023e88] hover:bg-white/90 rounded-xl py-6 font-heading font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2">
-            {t.becomeClient}
-            <ChevronRight className="w-5 h-5" />
-          </Button>
+          <Link href={`${locale}/auth/sign-up`}>
+            <Button className="w-full bg-white text-[#023e88] hover:bg-white/90 rounded-xl py-6 font-heading font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2">
+              {t.becomeClient}
+              <ChevronRight className="w-5 h-5" />
+            </Button>
+          </Link>
 
           {/* Mobile Contact Info */}
           <div className="mt-8 pt-6 border-t border-white/20 space-y-4">
@@ -268,7 +265,8 @@ export default function Navbar({
           {/* Mobile Social Links */}
           <div className="mt-6 flex items-center gap-3">
             <Link
-              href="#"
+              href="https://www.facebook.com/share/16CE5Hq8vh/"
+              target="_blank"
               className="p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-all duration-200 hover:scale-110"
             >
               <Facebook className="w-5 h-5 text-white" />

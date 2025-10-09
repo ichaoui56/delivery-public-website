@@ -42,7 +42,7 @@ export default async function RootLayout({
 
   return (
     <html
-      lang={locale || "ar"}
+      lang="ar"
       dir={isRTL ? "rtl" : "ltr"}
       className={`${inter.variable} ${rajdhani.variable} ${cairo.variable}`}
     >

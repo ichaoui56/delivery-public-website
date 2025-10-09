@@ -148,26 +148,14 @@ export default function NouveauProduitPage() {
               />
             </div>
 
-            <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="address">{t("productPage.address")}</Label>
-              <Textarea
-                id="address"
-                placeholder={t("productPage.addressPlaceholder")}
-                rows={3}
-                className="resize-none"
-                value={clientInfo.address}
-                onChange={(e) => setClientInfo({ ...clientInfo, address: e.target.value })}
-              />
-            </div>
-            <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="address">{t("productPage.address")}</Label>
-              <Textarea
-                id="address"
-                placeholder={t("productPage.addressPlaceholder")}
-                rows={3}
-                className="resize-none"
-                value={clientInfo.address}
-                onChange={(e) => setClientInfo({ ...clientInfo, address: e.target.value })}
+            <div className="space-y-2">
+              <Label htmlFor="city">{t("productPage.deliveryCompany")}</Label>
+              <Input
+                id="city"
+                placeholder={t("productPage.deliveryCompanyPlaceholder")}
+                className="h-12"
+                value={clientInfo.city}
+                onChange={(e) => setClientInfo({ ...clientInfo, city: e.target.value })}
               />
             </div>
           </div>
@@ -216,16 +204,6 @@ export default function NouveauProduitPage() {
                       className="h-12"
                     />
                   </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor={`productRef-${product.id}`}>{t("productPage.productRef")}</Label>
-                    <Input
-                      id={`productRef-${product.id}`}
-                      placeholder={t("productPage.productRefPlaceholder")}
-                      className="h-12 bg-muted"
-                    />
-                  </div>
-
                   <div className="space-y-2">
                     <Label htmlFor={`quantity-${product.id}`}>{t("productPage.quantity")}</Label>
                     <Input
@@ -246,43 +224,6 @@ export default function NouveauProduitPage() {
                     />
                   </div>
                 </div>
-              </div>
-
-              {/* Variants Section */}
-              <div className="mt-8 pt-8 border-t border-border">
-                <div className="flex items-center justify-between mb-6">
-                  <Label htmlFor={`variants-${product.id}`} className="text-lg font-heading">
-                    {t("productPage.variantsEnabled")}
-                  </Label>
-                  <Switch
-                    id={`variants-${product.id}`}
-                    checked={product.variantsActive}
-                    onCheckedChange={(checked) => toggleVariants(product.id, checked)}
-                  />
-                </div>
-
-                {product.variantsActive && (
-                  <div className="space-y-4">
-                    {product.variants.map((variant, variantIndex) => (
-                      <div key={variantIndex} className="grid grid-cols-3 gap-4">
-                        <Input placeholder={t("productPage.variantRef")} className="h-12 bg-muted" />
-                        <Input placeholder={t("productPage.variantName")} className="h-12" />
-                        <div className="flex gap-2">
-                          <Input placeholder="1" type="number" className="h-12" />
-                          {variantIndex === product.variants.length - 1 && (
-                            <Button
-                              onClick={() => addVariant(product.id)}
-                              size="icon"
-                              className="h-12 w-12 bg-green-500 hover:bg-green-600 flex-shrink-0"
-                            >
-                              <Plus className="w-5 h-5" />
-                            </Button>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
               </div>
             </div>
           ))}

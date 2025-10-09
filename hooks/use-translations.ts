@@ -3,14 +3,12 @@
 import { useParams } from "next/navigation"
 import fr from "@/locales/fr.json"
 import ar from "@/locales/ar.json"
-import en from "@/locales/en.json"
 
 type TranslationKey = string
 
 const translations = {
   fr,
   ar,
-  en,
 }
 
 export function useTranslations() {

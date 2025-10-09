@@ -282,3 +282,21 @@
 html {
   scroll-behavior: smooth;
 }
+
+.highlight-city {
+  position: relative;
+  font-weight: 900; /* Make it extra bold */
+  color: #fff; /* Keep it white for contrast */
+}
+
+.highlight-city::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 50%; /* underline only the last half */
+  height: 2px;
+  background-color: #00b4d8; /* Choose your accent color */
+  transform: translateY(2px);
+  border-radius: 2px;
+}

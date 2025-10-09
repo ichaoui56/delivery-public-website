@@ -1,6 +1,6 @@
 "use client"
 
-import { Truck, Warehouse, Package, RotateCcw, CheckCircle } from "lucide-react"
+import { Warehouse, Package, CheckCircle, Gift, Truck } from "lucide-react"
 import { useTranslations } from "@/hooks/use-translations"
 import ScrollAnimation from "@/components/scroll-animation"
 import { TranslationType } from "@/lib/translations"
@@ -16,24 +16,29 @@ export default function ServicesSection({
 
   const services = [
     {
-      icon: Truck,
+      icon: Warehouse,
       title: t.service1Title,
       description: t.service1Desc,
     },
     {
-      icon: Warehouse,
+      icon: Package,
       title: t.service2Title,
       description: t.service2Desc,
     },
     {
-      icon: Package,
+      icon: CheckCircle,
       title: t.service3Title,
       description: t.service3Desc,
     },
     {
-      icon: RotateCcw,
+      icon: Gift,
       title: t.service4Title,
       description: t.service4Desc,
+    },
+    {
+      icon: Truck,
+      title: t.service5Title,
+      description: t.service5Desc,
     },
   ]
 
@@ -62,7 +67,7 @@ export default function ServicesSection({
         </ScrollAnimation>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
           {services.map((service, index) => (
             <ScrollAnimation key={index} delay={0.2 + index * 0.1} duration={0.6}>
               <div className="bg-card border border-border rounded-2xl p-8 text-center hover:shadow-2xl hover:border-primary/50 transition-all duration-500 hover:-translate-y-3 hover:scale-105 group relative overflow-hidden">
