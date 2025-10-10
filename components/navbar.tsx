@@ -130,19 +130,28 @@ export default function Navbar({
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-1">
+            {/* Desktop Navigation */}
+            <div
+              className={`hidden lg:flex items-center gap-1 ${locale === "ar" ? "flex-row-reverse text-right" : "flex-row text-left"
+                }`}
+            >
               {navItems.map((item, index) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-white font-heading font-semibold text-base px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-200 relative group"
+                  className={`text-white font-heading font-semibold text-base px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-200 relative group ${locale === "ar" ? "ml-0 mr-2" : "mr-0 ml-2"
+                    }`}
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   {item.name}
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-white group-hover:w-3/4 transition-all duration-300" />
+                  <span
+                    className={`absolute bottom-0 ${locale === "ar" ? "right-1/2 translate-x-1/2" : "left-1/2 -translate-x-1/2"
+                      } w-0 h-0.5 bg-white group-hover:w-3/4 transition-all duration-300`}
+                  />
                 </Link>
               ))}
             </div>
+
 
             <div className="flex items-center gap-2 sm:gap-4">
               <button className="text-white hover:bg-white/10 p-2 rounded-full transition-all duration-200 hover:scale-110 hidden sm:block">
