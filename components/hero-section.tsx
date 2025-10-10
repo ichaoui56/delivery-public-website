@@ -47,7 +47,7 @@ export default function HeroSection({
     ? "text-center"
     : locale === "ar"
       ? "text-right"
-      : locale === "en"
+      : locale === "fr"
         ? "text-left"
         : "text-center"
 
@@ -56,9 +56,18 @@ export default function HeroSection({
       ? "justify-center"
       : locale === "ar"
         ? "justify-end"
-        : locale === "en"
+        : locale === "fr"
           ? "justify-start"
           : "justify-center"
+
+  const textAlignment =
+    typeof window !== "undefined" && window.innerWidth < 765
+      ? "text-center"
+      : locale === "ar"
+        ? "items-end"
+        : locale === "fr"
+          ? "items-start"
+          : "items-center"
 
   return (
     <section
@@ -119,7 +128,7 @@ export default function HeroSection({
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-8rem)]">
           <ScrollAnimation delay={0.2} duration={0.8}>
-            <div className="space-y-8">
+            <div className={`flex flex-col space-y-8 ${textAlignment}`}>
               <h1
                 className={`text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight text-balance ${textAlignClass}`}
               >

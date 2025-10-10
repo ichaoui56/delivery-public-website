@@ -41,7 +41,7 @@ export default function ContactSection({
                 </div>
                 <div className="rtl:text-right">
                   <div className="text-sm text-muted-foreground mb-1">{t.needHelp}</div>
-                  <div className="text-xl font-heading font-bold text-foreground">(307) 555-0133</div>
+                  <div className="text-xl font-heading font-bold text-foreground">{t.phoneValue}</div>
                 </div>
               </div>
 
