@@ -18,7 +18,7 @@
     "deliveryPersons": "Personnes de livraison",
     "satisfiedClients": "Clients satisfaits",
     "kgShipped": "Kg de colis expédiés",
-    "stat1": "60+",
+    "stat1": "60K+",
     "stat2": "8+",
     "stat3": "3K+",
     "stat4": "1K+"
@@ -231,7 +231,7 @@
     "title": "Abonnez-vous à Notre Newsletter",
     "subtitle": "Restez informé de nos dernières nouvelles et offres",
     "placeholder": "Entrez votre email",
-    "subscribe": "S'abonner"
+    "subscribe": "Devenir Client"
   },
   "footer": {
     "cta": "Votre Livraison Rapide et Fiable à Dakhla",

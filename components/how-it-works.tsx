@@ -106,13 +106,6 @@ export default function HowItWorks(
               <Rocket className="w-5 h-5 rtl:order-2" />
               <span className="rtl:order-1">{t.ctaButton1}</span>
             </Button>
-            <Button
-              variant="outline"
-              className="rounded-full px-8 py-6 text-lg font-heading font-bold flex items-center gap-2 bg-transparent"
-            >
-              <MessageSquare className="w-5 h-5 rtl:order-2" />
-              <span className="rtl:order-1">{t.ctaButton2}</span>
-            </Button>
           </div>
         </div>
         </ScrollAnimation>

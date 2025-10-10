@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input"
 import { ArrowRight } from "lucide-react"
 import ScrollAnimation from "@/components/scroll-animation"
 import { TranslationType } from "@/lib/translations"
+import Link from "next/link"
 
 export function NewsletterSection(
   {
@@ -32,17 +33,11 @@ export function NewsletterSection(
 
             {/* Form Section */}
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto lg:ml-auto">
-              <div className="w-full sm:w-[300px] lg:w-[395px] h-[60px] bg-neutral-100 rounded-[30px] overflow-hidden flex items-center px-2">
-                <Input
-                  placeholder={t.placeholder}
-                  className="flex-1 border-0 bg-transparent h-auto py-0 px-5 font-normal text-[#c1c1c1] text-base placeholder:text-[#c1c1c1] focus-visible:ring-0 focus-visible:ring-offset-0"
-                  dir={locale === "ar" ? "rtl" : "ltr"}
-                />
-              </div>
-
               <Button className="w-full sm:w-auto min-w-[157px] h-[60px] bg-black hover:bg-black/90 rounded-[30px] font-bold text-white text-[15px] tracking-[1.60px] leading-[26px]">
-                {t.subscribe}
-                <ArrowRight className={`w-4 h-4 ${locale === "ar" ? "mr-2 rotate-180" : "ml-2"}`} />
+                <Link href={`${locale}/auth/sign-in`} className="flex items-center justify-center gap-3">
+                  {t.subscribe}
+                  <ArrowRight className={`w-4 h-4 ${locale === "ar" ? "mr-2 rotate-180" : "ml-2"}`} />
+                </Link>
               </Button>
             </div>
           </div>
