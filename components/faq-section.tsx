@@ -32,10 +32,19 @@ export default function FaqSection({
       question: t.question4,
       answer: t.answer4,
     },
+    {
+      question: t.question5,
+      answer: t.answer5,
+    },
   ]
 
+  const isRTL = locale === "ar"
+
   return (
-    <section className="py-20 bg-background">
+    <section
+      className="py-20 bg-background"
+      dir={isRTL ? "rtl" : "ltr"}
+    >
       <div className="container mx-auto px-4">
         <ScrollAnimation delay={0.1} duration={0.6}>
           <div className="text-center mb-16 space-y-4">
@@ -51,28 +60,35 @@ export default function FaqSection({
             {faqs.map((faq, index) => (
               <ScrollAnimation key={index} delay={0.2 + index * 0.1} duration={0.6}>
                 <div className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-shadow">
-                <button
-                  onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-muted/50 transition-colors rtl:text-right"
-                >
-                  <span className="text-lg font-heading font-bold text-foreground pr-4 rtl:pr-0 rtl:pl-4">
-                    {faq.question}
-                  </span>
-                  <div className="w-10 h-10 bg-foreground rounded-full flex items-center justify-center flex-shrink-0">
-                    {openIndex === index ? (
-                      <ChevronUp className="w-5 h-5 text-white" />
-                    ) : (
-                      <ChevronDown className="w-5 h-5 text-white" />
-                    )}
-                  </div>
-                </button>
+                  <button
+                    onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
+                    className={`w-full flex items-center justify-between p-6 hover:bg-muted/50 transition-colors ${isRTL
+                        ? "text-right flex-row"
+                        : "text-left"
+                      }`}
+                  >
+                    <span className={`text-lg font-heading font-bold text-foreground ${isRTL ? "pl-4 text-right" : "pr-4 text-left"
+                      }`}>
+                      {faq.question}
+                    </span>
+                    <div className="w-10 h-10 bg-foreground rounded-full flex items-center justify-center flex-shrink-0">
+                      {openIndex === index ? (
+                        <ChevronUp className="w-5 h-5 text-white" />
+                      ) : (
+                        <ChevronDown className="w-5 h-5 text-white" />
+                      )}
+                    </div>
+                  </button>
 
-                {openIndex === index && (
-                  <div className="px-6 pb-6 text-muted-foreground leading-relaxed border-t border-border pt-4">
-                    {faq.answer}
-                  </div>
-                )}
-              </div>
+                  {openIndex === index && (
+                    <div
+                      className={`px-6 pb-6 text-muted-foreground leading-relaxed border-t border-border pt-4 ${isRTL ? "text-right" : "text-left"
+                        }`}
+                      style={{ lineHeight: '1.8' }}
+                      dangerouslySetInnerHTML={{ __html: faq.answer }}
+                    />
+                  )}
+                </div>
               </ScrollAnimation>
             ))}
           </div>

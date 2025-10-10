@@ -51,8 +51,10 @@ export default function ServicesSection({
     t.priority6,
   ]
 
+  const isRTL = locale === "ar"
+
   return (
-    <section id="services" className="py-20 bg-background">
+    <section id="services" className="py-20 bg-background" dir={isRTL ? "rtl" : "ltr"}>
       <div className="container mx-auto px-4">
         {/* Header */}
         <ScrollAnimation delay={0.1} duration={0.6}>
@@ -62,7 +64,12 @@ export default function ServicesSection({
               {t.titleEnd}
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto" />
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">{t.subtitle}</p>
+            <p
+              className={`text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed ${isRTL ? "text-right" : "text-left"
+                }`}
+            >
+              {t.subtitle}
+            </p>
           </div>
         </ScrollAnimation>
 
@@ -92,7 +99,8 @@ export default function ServicesSection({
           <div className="bg-muted rounded-3xl overflow-hidden">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               {/* Image */}
-              <div className="relative h-[500px] lg:h-[600px] order-2 lg:order-1 rtl:lg:order-2">
+              <div className={`relative h-[500px] lg:h-[600px] ${isRTL ? "lg:order-2" : "lg:order-1"
+                }`}>
                 <img
                   src="/delivery-person-holding-stacked-boxes-with-sonic-d.jpg"
                   alt="Sonic Delivery Service"
@@ -101,14 +109,24 @@ export default function ServicesSection({
               </div>
 
               {/* Content */}
-              <div className="p-8 lg:p-12 space-y-6 order-1 lg:order-2 rtl:lg:order-1">
-                <h3 className="text-3xl font-heading font-bold text-foreground mb-8">{t.prioritiesTitle}</h3>
+              <div className={`p-8 lg:p-12 space-y-6 ${isRTL ? "lg:order-1" : "lg:order-2"
+                }`}>
+                <h3 className={`text-3xl font-heading font-bold text-foreground mb-8 ${isRTL ? "text-right" : "text-left"
+                  }`}>
+                  {t.prioritiesTitle}
+                </h3>
 
-                <div className="space-y-4">
+                <div className="space-y-4 ">
                   {priorities.map((priority, index) => (
-                    <div key={index} className="flex items-start gap-3 rtl:flex-row-reverse">
-                      <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-lg text-foreground">{priority}</span>
+                    <div
+                      key={index}
+                      className={`flex items-start gap-3 ${isRTL ? "flex-row text-right" : "flex-row text-left"
+                        }`}
+                    >
+                      {/* Check icon always comes first in reading order */}
+                      <CheckCircle className={`w-6 h-6 text-primary flex-shrink-0 mt-0.5 ${isRTL ? "ml-3" : "mr-3"
+                        }`} />
+                      <span className="text-lg text-foreground flex-1">{priority}</span>
                     </div>
                   ))}
                 </div>
