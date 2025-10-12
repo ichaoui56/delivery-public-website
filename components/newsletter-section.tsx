@@ -32,7 +32,7 @@ export function NewsletterSection(
             </div>
 
             {/* Form Section */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto lg:ml-auto">
+            <div className="flex flex-col sm:flex-row items-center gap-4 lg:w-auto">
               <Button className="w-full sm:w-auto min-w-[157px] h-[60px] bg-black hover:bg-black/90 rounded-[30px] font-bold text-white text-[15px] tracking-[1.60px] leading-[26px]">
                 <Link href={`${locale}/auth/sign-in`} className="flex items-center justify-center gap-3">
                   {t.subscribe}
