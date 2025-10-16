@@ -177,6 +177,15 @@
     outline-color: oklch(from var(--ring) l c h / 0.5);
   }
 
+   .scrollbar-hide {
+    /* Firefox */
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    /* Safari and Chrome */
+    display: none;
+  }
   /* Enhanced RTL Support - Full section and card reversal for Arabic */
   /* Automatically applied when dir="rtl" is set on html element */
 
