@@ -156,14 +156,14 @@ export default function HeroSection({
           </ScrollAnimation>
 
           <ScrollAnimation delay={0.4} duration={0.8}>
-            <div className="relative">
+            <div className="relative flex items-center justify-center min-h-[400px] lg:min-h-[600px]">
               {/* Star shape behind */}
-              <div className="absolute hidden sm:block lg:top-1/2 -top-[400px] lg:right-0 -right-[10%] -translate-y-1/2 lg:w-64 lg:h-64 w-48 h-48 z-0">
+              <div className="absolute lg:top-1/2 top-[40%] lg:right-0 right-[5%] -translate-y-1/2 lg:w-64 lg:h-64 w-40 h-40 z-0">
                 <img src="/images/design-mode/hero-shape1.png.png" alt="" className="w-full h-full object-contain" />
               </div>
 
               {/* Slowly spinning circle - 120 seconds per rotation */}
-              <div className="absolute hidden sm:block lg:top-1/2 -top-[300px] lg:left-1/2 left-[80%] -translate-x-1/2 -translate-y-1/2 w-[300px] lg:w-[500px] h-[500px] z-10">
+              <div className="absolute lg:top-1/2 top-[50%] lg:left-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[350px] lg:w-[500px] h-[280px] sm:h-[350px] lg:h-[500px] z-10">
                 <img
                   src="/images/design-mode/hero-shape2.png.png"
                   alt=""
@@ -175,11 +175,11 @@ export default function HeroSection({
               </div>
 
               {/* Delivery person image */}
-              <div className="relative hidden lg:block z-20 flex items-center justify-center">
+              <div className="relative z-20 flex items-center justify-center w-full max-w-[400px]  sm:max-w-[550px] lg:max-w-[595px] mx-auto">
                 <img
-                  src="/images/design-mode/4bfd00b0-fd1a-401d-9916-551337535f91__1_-removebg-preview.png"
+                  src="/images/hero-image-no-road.png"
                   alt="Delivery Professional"
-                  className="w-full max-w-md object-contain"
+                  className="w-full h-auto object-contain"
                 />
               </div>
             </div>
@@ -187,7 +187,7 @@ export default function HeroSection({
         </div>
 
         <ScrollAnimation delay={0.6} duration={0.8}>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 mt-12 bg-[#3b8bc9] rounded-t-3xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 -mt-1 sm:-mt-7 md:-mt-7 bg-[#3b8bc9] rounded-t-3xl">
             <div className="flex items-center justify-center gap-3">
               <div className="w-14 h-14 bg-[#5ba8d8] rounded-xl flex items-center justify-center">
                 <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">

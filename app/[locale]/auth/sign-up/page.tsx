@@ -35,7 +35,7 @@ export default async function InscriptionPage({ params }: { params: Promise<{ lo
                     <div className="w-full max-w-3xl">
                         {/* Form Card */}
                         <div className="bg-white p-4 lg:p-6 lg:shadow-xl lg:border lg:border-gray-200 rounded-lg">
-                            <div className="mb-4 text-center lg:text-left">
+                            <div className="mb-4 text-center lg:text-right">
                                 <h2 className="text-xl lg:text-2xl font-bold text-gray-900 mb-1">{t.title}</h2>
                                 <p className="text-xs lg:text-sm text-gray-600">{t.subtitle}</p>
                             </div>

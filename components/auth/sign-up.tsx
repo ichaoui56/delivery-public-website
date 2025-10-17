@@ -54,9 +54,6 @@ export function SignUp({ translations, locale }: SignUpProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       {/* Full Name */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-      </div>
       <div>
         <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1.5">
           {t.fullNameLabel}
