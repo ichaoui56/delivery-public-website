@@ -103,7 +103,7 @@ export default function ServicesSection({
                 }`}>
                 <img
                   src="/delivery-person-holding-stacked-boxes-with-sonic-d.jpg"
-                  alt="Sonic Delivery Service"
+                  alt="Sonixpress Delivery Service"
                   className="w-full h-full object-cover"
                 />
               </div>

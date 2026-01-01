@@ -125,7 +125,7 @@ export default function Navbar({
                 <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" />
               </div>
               <span className="text-white text-lg sm:text-2xl font-heading font-bold group-hover:text-white/90 transition-colors">
-                Sonic Delivery
+                Sonixpress
               </span>
             </Link>
 

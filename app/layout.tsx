@@ -24,7 +24,7 @@ const cairo = Cairo({
 })
 
 export const metadata: Metadata = {
-  title: "Sonic Delivery - Your E-commerce Logistics Simplified",
+  title: "Sonixpress - Your E-commerce Logistics Simplified",
   description:
     "Reliable pickup, storage and delivery throughout Morocco. Grow your e-commerce business with our trusted logistics network.",
     generator: 'v0.app'

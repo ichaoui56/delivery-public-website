@@ -25,8 +25,8 @@ export default async function InscriptionPage({ params }: { params: Promise<{ lo
                         <span className="text-sm font-medium">{locale === "fr" ? "Accueil" : "الرئيسية"}</span>
                     </Link>
                     <div className="flex items-center gap-2">
-                        <Image src="/images/sonic-logo.png" alt="Sonic Delivery Logo" width={32} height={32} />
-                        <span className="text-lg font-bold text-[#023e88]">Sonic Delivery</span>
+                        <Image src="/images/sonic-logo.png" alt="Sonixpress Logo" width={32} height={32} />
+                        <span className="text-lg font-bold text-[#023e88]">Sonixpress</span>
                     </div>
                 </div>
 
@@ -69,12 +69,12 @@ export default async function InscriptionPage({ params }: { params: Promise<{ lo
                         <div className="flex items-center gap-4">
                             <Image
                                 src="/images/sonic-logo.png"
-                                alt="Sonic Delivery Logo"
+                                alt="Sonixpress Logo"
                                 width={70}
                                 height={70}
                                 className="drop-shadow-2xl"
                             />
-                            <h1 className="text-3xl font-bold text-white">Sonic Delivery</h1>
+                            <h1 className="text-3xl font-bold text-white">Sonixpress</h1>
                         </div>
                     </div>
 

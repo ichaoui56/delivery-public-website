@@ -25,12 +25,12 @@ export default async function ConnexionPage({ params }: { params: Promise<{ loca
             <div className="flex items-center gap-4">
               <Image
                 src="/images/sonic-logo.png"
-                alt="Sonic Delivery Logo"
+                alt="Sonixpress Logo"
                 width={80}
                 height={80}
                 className="drop-shadow-2xl"
               />
-              <h1 className="text-4xl font-bold text-white">Sonic Delivery</h1>
+              <h1 className="text-4xl font-bold text-white">Sonixpress</h1>
             </div>
           </div>
 
@@ -63,8 +63,8 @@ export default async function ConnexionPage({ params }: { params: Promise<{ loca
             <span className="text-sm font-medium">{locale === "fr" ? "Accueil" : "الرئيسية"}</span>
           </Link>
           <div className="flex items-center gap-2">
-            <Image src="/images/sonic-logo.png" alt="Sonic Delivery Logo" width={32} height={32} />
-            <span className="text-lg font-bold text-[#023e88]">Sonic Delivery</span>
+            <Image src="/images/sonic-logo.png" alt="Sonixpress Delivery Logo" width={32} height={32} />
+            <span className="text-lg font-bold text-[#023e88]">Sonixpress</span>
           </div>
         </div>
 

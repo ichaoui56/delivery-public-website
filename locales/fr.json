@@ -26,7 +26,7 @@
     },
     "signUp": {
       "title": "Créer un compte commerçant",
-      "subtitle": "Rejoignez Sonic Delivery et profitez de nos services de livraison rapide",
+      "subtitle": "Rejoignez Sonixpress et profitez de nos services de livraison rapide",
       "fullNameLabel": "Nom complet",
       "fullNamePlaceholder": "Mohamed Amine Ben Ali",
       "storeNameLabel": "Nom du magasin / Activité commerciale",
@@ -56,7 +56,7 @@
       "submitButton": "Créer un compte",
       "haveAccount": "Vous avez déjà un compte?",
       "signInLink": "Se connecter",
-      "approvalNote": "Après la création de votre compte, l'équipe de Sonic Delivery le révisera et l'approuvera dans les 24 heures avant son activation.",
+      "approvalNote": "Après la création de votre compte, l'équipe de Sonixpress le révisera et l'approuvera dans les 24 heures avant son activation.",
       "cities": {
         "casablanca": "Casablanca",
         "rabat": "Rabat",
@@ -215,10 +215,10 @@
   },
   "pricing": {
     "title": "Comparaison avec les entreprises de livraison traditionnelles",
-    "subtitle": "Sonic Delivery se distingue par sa livraison rapide, son service de confirmation de commande et son faible taux de retour dans les villes du Sud, ce qui en fait un choix privilégié pour de nombreux clients dans toutes les villes du Maroc",
+    "subtitle": "Sonixpress se distingue par sa livraison rapide, son service de confirmation de commande et son faible taux de retour dans les villes du Sud, ce qui en fait un choix privilégié pour de nombreux clients dans toutes les villes du Maroc",
     "tableHeader1": "Critère",
     "tableHeader2": "Livraison Traditionnelle",
-    "tableHeader3": "⚡ Sonic Delivery",
+    "tableHeader3": "⚡ Sonixpress",
     "criteria1": "Prix",
     "traditional1": "40 - 45 DH par livraison",
     "sonic1": "Seulement 22 DH par livraison",
@@ -302,7 +302,7 @@
     "pagesLink": "Pages",
     "blog": "Blog",
     "contactLink": "Contact",
-    "copyright": "© Sonic Delivery 2025 | Tous Droits Réservés",
+    "copyright": "© Sonixpress 2025 | Tous Droits Réservés",
     "terms": "Termes & Conditions",
     "privacy": "Politique de Confidentialité",
     "contactUs": "Contactez-Nous"
