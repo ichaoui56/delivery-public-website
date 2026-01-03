@@ -154,11 +154,9 @@ export default function Navbar({
 
 
             <div className="flex items-center gap-2 sm:gap-4">
-              <button className="text-white hover:bg-white/10 p-2 rounded-full transition-all duration-200 hover:scale-110 hidden sm:block">
-                <Search className="w-5 h-5" />
-              </button>
+             
 
-              <Link href={`${locale}/auth/sign-in`}>
+              <Link href="https://sonic-delivery.up.railway.app/login">
                 <Button className="bg-white text-[#023e88] hover:bg-white/90 hover:scale-105 rounded-full px-4 sm:px-6 py-2 sm:py-2.5 font-heading font-bold tracking-wide hidden md:flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base">
                   {t.becomeClient}
                   <ChevronRight className="w-4 h-4" />
@@ -244,7 +242,7 @@ export default function Navbar({
           </nav>
 
           {/* Mobile CTA Button */}
-          <Link href={`${locale}/auth/sign-up`}>
+          <Link href="https://sonic-delivery.up.railway.app/login">
             <Button className="w-full bg-white text-[#023e88] hover:bg-white/90 rounded-xl py-6 font-heading font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2">
               {t.becomeClient}
               <ChevronRight className="w-5 h-5" />

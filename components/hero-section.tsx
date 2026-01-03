@@ -69,6 +69,8 @@ export default function HeroSection({
           ? "items-start"
           : "items-center"
 
+  const isRtl = locale === "ar"
+
   return (
     <section
       id="home"
@@ -144,7 +146,7 @@ export default function HeroSection({
               <div className={`flex ${buttonAlignment}`}>
                 <Button
                   variant="ghost"
-                  className="text-gray-900 hover:text-gray-900 hover:bg-white/10 font-heading font-bold text-base tracking-wider flex items-center gap-2 group"
+                  className="text-gray-900 hover:text-gray-900 mb-10 hover:bg-white/10 font-heading font-bold text-base tracking-wider flex items-center gap-2 group"
                 >
                   <div className="w-11 h-11 rounded-full bg-white/80 flex items-center justify-center group-hover:bg-white transition-colors">
                     <Play className="w-5 h-5 fill-gray-900" />
@@ -177,7 +179,7 @@ export default function HeroSection({
               {/* Delivery person image */}
               <div className="relative z-20 flex items-center justify-center w-full max-w-[400px]  sm:max-w-[550px] lg:max-w-[595px] mx-auto">
                 <img
-                  src="/images/hero-image-no-road.png"
+                  src={locale === 'fr' ? "/images/hero-image-no-road-fr.png" : "/images/hero-image-no-road.png"}
                   alt="Delivery Professional"
                   className="w-full h-auto object-contain"
                 />
