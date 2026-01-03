@@ -92,7 +92,7 @@ export default function HeroSection({
 
       <div
         className={`${isSticky ? "md:fixed absolute" : "absolute"
-          } md:top-1/2 md:-translate-y-1/2 top-[650px] left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 z-50 flex flex-row md:flex-col gap-4 ${locale === "ar" ? "md:pl-6" : "md:pl-6"
+          } md:top-1/2 md:-translate-y-1/2 top-[700px] left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 z-50 flex flex-row md:flex-col gap-4 ${locale === "ar" ? "md:pl-6" : "md:pl-6"
           } transition-all duration-300`}
         style={{
           zIndex: 0,
